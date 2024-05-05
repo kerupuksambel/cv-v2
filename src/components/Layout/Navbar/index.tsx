@@ -13,11 +13,14 @@ const menus : TypeMenu[] = [
 
 const Navbar: React.FC = () => {
     return (
-        <header className="w-full bg-white h-[80px] sticky top-0 z-50 flex items-center justify-center uppercase tracking-wide">
+        <header className="w-full bg-white h-[80px] fixed top-0 z-50 flex items-center justify-center uppercase tracking-widest">
             {menus.map((menu, idx) => {
                 return (
                     <div key={idx}>
-                        <Link to={menu.link}>{menu.name}</Link>
+                        {menu.link 
+                            ? <Link to={menu.link}>{menu.name}</Link>
+                            : (menu.onClick ? <span onClick={menu.onClick}>{menu.name}</span> : <div>{menu.name}</div>)
+                        }
                     </div>
                 )
             })}

@@ -3,6 +3,7 @@ export type TypeMenu = {
     name: string;
     isExternal?: boolean;
     isCurrent?: boolean;
+    onClick?: () => void;
 };
 
 export interface InterfaceNavbar {
