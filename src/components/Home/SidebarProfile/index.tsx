@@ -38,7 +38,7 @@ const SidebarProfile  = ({openSidebar, setOpenSidebar}: SidebarProfileT) => {
     }
 
     return (
-        <div className={`bg-primary text-white h-[100vh] text-center flex flex-wrap justify-center items-center uppercase tracking-wider`}>
+        <div className={`bg-primary text-white h-[100vh] text-center flex flex-wrap justify-center items-center uppercase tracking-wider overflow-hidden`}>
             <div className="flex flex-wrap justify-center items-center gap-y-6 w-full">
             {
                 menus.map((menu, idx) => (
@@ -48,7 +48,7 @@ const SidebarProfile  = ({openSidebar, setOpenSidebar}: SidebarProfileT) => {
                 ))
             }
             </div>
-            <div className="w-[48px] h-[48px] rounded-full bg-white text-primary text-2xl flex justify-center items-center hover:cursor-pointer" onClick={() => setOpenSidebar(false)}>
+            <div className={`w-[48px] h-[48px] rounded-full bg-white text-primary text-2xl flex justify-center items-center hover:cursor-pointer`} onClick={() => setOpenSidebar(false)}>
                 <Icon icon="mdi:chevron-left"/>
             </div>
         </div>
