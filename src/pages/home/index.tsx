@@ -5,11 +5,21 @@ import SidebarProfile from "@/components/Home/SidebarProfile"
 // import ProjectExperiences from "@/components/Home/ProjectExperiences"
 import WorkingExperiences from "@/components/Home/WorkingExperiences"
 import Layout from "@/components/Layout"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Icon } from "@iconify/react"
 
 const Home: React.FC = () => {
-    const [openSidebar, setOpenSidebar] = useState(false);
+    const [openSidebar, setOpenSidebar] = useState(true);
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll)
+    }, [])
+
+    const handleScroll = () => {
+        // if () {
+            
+        // }
+    }
 
     return (
         <Layout>

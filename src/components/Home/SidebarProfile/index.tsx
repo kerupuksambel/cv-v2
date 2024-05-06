@@ -1,6 +1,6 @@
 import { scrollToID } from "@/lib/utils"
 import { Icon } from "@iconify/react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 interface SidebarMenuT {
     name: string,
@@ -29,8 +29,7 @@ const menus: SidebarMenuT[] = [
     },
 ]
 
-
-const SidebarProfile  = ({openSidebar, setOpenSidebar}: SidebarProfileT) => {
+const SidebarProfile  = ({setOpenSidebar}: SidebarProfileT) => {
     const [activeMenu, changeActiveMenu] = useState<number|null>(null);
     const handleClick = (menu: SidebarMenuT) => {
         scrollToID(menu.id);

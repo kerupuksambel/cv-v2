@@ -1,11 +1,19 @@
+import { Icon } from "@iconify/react/dist/iconify.js";
+
 const Profile = () => {
     return (
-        <div className="w-full bg-primary text-white h-[100vh]">
-            <div className="flex content-center justify-center flex-wrap h-full">
-                <div>
+        <div className="w-full bg-primary text-white h-[100vh] flex justify-center relative z-10">
+            <div className="flex items-center content-center justify-center flex-wrap h-full w-1/2 space-y-10">
+                <div className="w-full">
                     <div className="text-5xl font-bold pt-3 font-header">Ammar Alifian Fahdan</div>
                     <div className="text-2xl pt-3">Full Stack Web Developer</div>
                 </div>
+                <div className="w-full">
+                    <a href="/resume" target="_blank" className="inline-flex w-auto p-5 bg-primary text-white border-white border-4 hover:border-white hover:bg-white hover:text-primary transition-colors duration-500 font-bold">Download Full Resume</a>
+                </div>
+            </div>
+            <div className="hidden w-full justify-center items-end">
+                <Icon icon={"mdi:chevron-down"} className="text-5xl text-white"/>
             </div>
         </div>
     )

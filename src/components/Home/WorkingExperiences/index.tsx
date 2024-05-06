@@ -50,13 +50,13 @@ const WorkingExperiences = () => {
                                 <div>{dateFormat(workExperience.date.start, "mmmm yyyy")} - {workExperience.date.end ? dateFormat(workExperience.date.end, "mmmm yyyy") : "Now"}</div>
                             </div>
                             <div className={`flex w-2/3 justify-start space-x-3`}>
-                                <div className={``}>
+                                <div className={`space-y-2`}>
                                     <div className="font-bold text-xl">{workExperience.name}</div>
                                     <div className="font-bold">{workExperience.position}</div>
-                                    <ul>
+                                    <ul className="space-y-3">
                                     {
                                         workExperience.achievements.map((ach, idx) => (
-                                                <li key={idx} className="list-disc">{ach}</li>
+                                            <li key={idx} className="list-disc">{ach}</li>
                                         ))
                                     }
                                     </ul>
