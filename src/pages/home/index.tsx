@@ -5,36 +5,41 @@ import SidebarProfile from "@/components/Home/SidebarProfile"
 // import ProjectExperiences from "@/components/Home/ProjectExperiences"
 import WorkingExperiences from "@/components/Home/WorkingExperiences"
 import Layout from "@/components/Layout"
-import { useEffect, useState } from "react"
+import { useRef, useState } from "react"
 import { Icon } from "@iconify/react"
+import ProjectExperiences from "@/components/Home/ProjectExperiences"
 
 const Home: React.FC = () => {
     const [openSidebar, setOpenSidebar] = useState(true);
+    const mainRef = useRef<HTMLDivElement|null>(null)
 
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll)
-    }, [])
+    // useEffect(() => {
+    //     window.addEventListener('scroll', handleScroll)
+    // }, [])
 
-    const handleScroll = () => {
-        // if () {
-            
-        // }
-    }
+    // const handleScroll = () => {
+    //     if (mainRef && mainRef.current) {
+    //         const element = mainRef.current
+    //         if(element !== null && Math.abs(element.scrollHeight - (element.scrollTop + element.clientHeight)) <= 1){
+    //             setOpenSidebar(true)
+    //         }
+    //     }
+    // }
 
     return (
         <Layout>
             <Profile/>
-            <div className="w-full flex flex-wrap min-h-[100vh]">
-                <div className={`${openSidebar ? "w-1/3" : "w-0"} transition-all duration-1000 ease-in-out`}>
+            <div className="w-full flex flex-wrap min-h-[100vh]" ref={mainRef}>
+                <div className={`${openSidebar ? "w-full md:w-1/3" : "w-0"} transition-all duration-1000 ease-in-out md:static fixed z-10 md:z-0 left-0 top-0`}>
                     <SidebarProfile openSidebar={openSidebar} setOpenSidebar={setOpenSidebar}/>
                 </div>
-                <div className="p-3 px-6 flex-grow">
+                <div className="p-3 px-6 flex-grow space-y-6">
                     <WorkingExperiences/>
+                    <ProjectExperiences/>
                 </div>
                 <div className={`w-[48px] h-[48px] rounded-full bg-primary text-white text-2xl flex justify-center items-center fixed bottom-8 left-8 hover:cursor-pointer ${openSidebar ? "z-[-999]" : "z-0 transition-all duration-1000 ease-in-out"}`}  onClick={() => setOpenSidebar(!openSidebar)}>
                     <Icon icon="mdi:menu"/>
                 </div>
-                {/* <ProjectExperiences/> */}
             </div>
         </Layout>
     )

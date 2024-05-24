@@ -1,7 +1,8 @@
+import { Header } from '@/components/UI/Header/index';
 const ProjectExperiences = () => {
     return (
-        <div>
-            Project Experiences goes here...
+        <div className='w-full flex flex-wrap justify-center' id="project-experiences">
+            <Header>Projects</Header>
         </div>
     )
 }
