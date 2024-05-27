@@ -42,6 +42,7 @@ const WorkingExperiences = () => {
     return (
         <div className="w-full flex flex-wrap justify-center" id="working-experiences">
             <Header>Work Experiences</Header>
+            {/* TODO: modularize */}
             <div className="w-full">
                 {
                     workExperiences.map((workExperience, idx) => (

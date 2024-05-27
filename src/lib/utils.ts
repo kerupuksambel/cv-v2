@@ -36,3 +36,10 @@ export const useWindowDimensions = () => {
 
   return windowDimensions;
 }
+
+
+
+export const substrWords = (string: string, charCount: number, ellipsis = '...') => {
+  var trimmedString = string.substring(0, charCount)
+  return trimmedString.substring(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" "))) + ((string.length > trimmedString.length) ? ellipsis : "")
+}
