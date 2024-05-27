@@ -5,12 +5,14 @@ import SidebarProfile from "@/components/Home/SidebarProfile"
 // import ProjectExperiences from "@/components/Home/ProjectExperiences"
 import WorkingExperiences from "@/components/Home/WorkingExperiences"
 import Layout from "@/components/Layout"
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Icon } from "@iconify/react"
 import ProjectExperiences from "@/components/Home/ProjectExperiences"
+import { useWindowDimensions } from "@/lib/utils"
 
 const Home: React.FC = () => {
-    const [openSidebar, setOpenSidebar] = useState(true);
+    const screenDimension = useWindowDimensions();
+    const [openSidebar, setOpenSidebar] = useState(screenDimension.width > 768);
     const mainRef = useRef<HTMLDivElement|null>(null)
 
     // useEffect(() => {
@@ -21,7 +23,9 @@ const Home: React.FC = () => {
     //     if (mainRef && mainRef.current) {
     //         const element = mainRef.current
     //         if(element !== null && Math.abs(element.scrollHeight - (element.scrollTop + element.clientHeight)) <= 1){
-    //             setOpenSidebar(true)
+    //             if(!openSidebar){
+    //                 setOpenSidebar(true)
+    //             }
     //         }
     //     }
     // }
@@ -29,11 +33,11 @@ const Home: React.FC = () => {
     return (
         <Layout>
             <Profile/>
-            <div className="w-full flex flex-wrap min-h-[100vh]" ref={mainRef}>
-                <div className={`${openSidebar ? "w-full md:w-1/3" : "w-0"} transition-all duration-1000 ease-in-out md:static fixed z-10 md:z-0 left-0 top-0`}>
+            <div className="w-full flex" ref={mainRef}>
+                <div className={`${openSidebar ? "w-full md:w-[30vw]" : "w-0"} min-h-[100vh] h-full transition-all duration-1000 ease-in-out fixed md:sticky z-10 md:z-0 left-0 top-0`}>
                     <SidebarProfile openSidebar={openSidebar} setOpenSidebar={setOpenSidebar}/>
                 </div>
-                <div className="p-3 px-6 flex-grow space-y-6">
+                <div className="p-3 px-6 flex-grow space-y-6 w-full md:w-[70vw]">
                     <WorkingExperiences/>
                     <ProjectExperiences/>
                 </div>
