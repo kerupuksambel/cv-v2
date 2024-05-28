@@ -1,6 +1,6 @@
 import { scrollToID } from "@/lib/utils"
 import { Icon } from "@iconify/react"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 interface SidebarMenuT {
     name: string,
