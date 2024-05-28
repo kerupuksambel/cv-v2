@@ -34,7 +34,7 @@ const Home: React.FC = () => {
         <Layout>
             <Profile/>
             <div className="w-full flex" ref={mainRef}>
-                <div className={`${openSidebar ? "w-full md:w-[30vw]" : "w-0"} min-h-[100vh] h-full transition-all duration-1000 ease-in-out fixed md:sticky z-10 md:z-0 left-0 top-0`}>
+                <div className={`${openSidebar ? "w-full md:w-[30vw]" : "w-0"} min-h-[100vh] h-full transition-all duration-1000 ease-in-out fixed md:sticky z-20 md:z-0 left-0 top-0`}>
                     <SidebarProfile openSidebar={openSidebar} setOpenSidebar={setOpenSidebar}/>
                 </div>
                 <div className="p-3 px-6 flex-grow space-y-6 w-full md:w-[70vw]">

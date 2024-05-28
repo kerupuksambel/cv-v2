@@ -15,7 +15,7 @@ const Project = ({project}: ProjectComponentT) => {
     return (
     <>
         <ProjectCard project={project} onClick={() => setOpenModal(true)}/>
-        <Popup open={openModal} closeOnDocumentClick closeOnEscape onClose={() => setOpenModal(false)}>
+        <Popup contentStyle={{width: "80vw", padding: "0", border: "none"}} open={openModal} closeOnDocumentClick closeOnEscape onClose={() => setOpenModal(false)}>
             <ProjectModal project={project}/>
         </Popup>
     </>

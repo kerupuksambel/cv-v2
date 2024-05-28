@@ -19,6 +19,6 @@ export type ProjectT = {
 
 export interface TechStackT {
     name: string,
-    icon: string,
+    icon?: string,
     link?: string
 }
