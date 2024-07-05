@@ -27,7 +27,7 @@ const Navbar = ({ menus }: NavbarT) => {
       
           window.scrollTo({
             top: offsetPosition,
-            behavior: behavior
+            behavior: behavior ?? "smooth"
           });
         }
     }
@@ -66,7 +66,7 @@ const Navbar = ({ menus }: NavbarT) => {
     }, [openMenu])
 
     return (
-        <nav className={`bg-primary fixed w-full top-0 ${hidden ? "opacity-0" : "opacity-100"} transition-opacity duration-300 md:flex`} style={{height: navbarHeight + "px"}}>
+        <nav className={`bg-primary fixed w-full top-0 ${hidden ? "opacity-0" : "opacity-100"} z-10 transition-opacity duration-300 md:flex`} style={{height: navbarHeight + "px"}}>
             <div className="max-w-screen-xl flex flex-wrap items-center justify-center mx-auto p-4 h-full">
                 <button 
                     type="button" 
@@ -89,11 +89,12 @@ const Navbar = ({ menus }: NavbarT) => {
                     <Icon icon="mdi:menu" className='text-3xl'/>
                 </button>
                 <div className={`
-                    ${openMenu ? 'block' : 'hidden'} 
+                    ${openMenu ? 'top-0' : 'top-[-100vh]'} 
                     w-full md:w-auto md:block flex flex-wrap
                     bg-primary md:bg-transparent
-                    fixed left-0 top-0 md:static
+                    fixed left-0 md:static
                     h-[100vh] md:h-auto
+                    transition-all duration-1000
                 `}>
                     <ul className="
                         font-medium uppercase tracking-widest 

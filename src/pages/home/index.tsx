@@ -57,9 +57,11 @@ const Home: React.FC = () => {
             <Navbar menus={menus}/>
             <Profile/>
             <div className="w-full flex" ref={mainRef}>
-                <div className="p-6 flex-grow space-y-6 w-full md:w-[70vw]">
-                    <WorkingExperiences/>
-                    <ProjectExperiences/>
+                <div className="p-6 space-y-6 w-full flex justify-center">
+                    <div className="w-4/5">
+                        <WorkingExperiences/>
+                        <ProjectExperiences/>
+                    </div>
                 </div>
             </div>
         </Layout>
