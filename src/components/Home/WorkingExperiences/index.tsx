@@ -40,7 +40,7 @@ const workExperiences: WorkExperienceT[] = [
 
 const WorkingExperiences = () => {
     return (
-        <div className="w-full flex flex-wrap justify-center" id="working-experiences">
+        <div className="flex flex-wrap justify-center" id="working-experiences">
             <Header>Work Experiences</Header>
             {/* TODO: modularize */}
             <div className="w-full">

@@ -9,14 +9,6 @@ export default {
       colors: {
         'primary': 'rgb(17, 24, 39)',
       },
-      // animation: {
-      //   'slide-in': 'slide-in 0.5s ease-out',
-      // },
-      // keyframes: {
-      //   'stretch-in': {
-      //     '0%': { width: '0%' }
-      //   }
-      // }
     },
     fontFamily: {
       // 'ubuntu': ['Ubuntu', 'sans-serif'],

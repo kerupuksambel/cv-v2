@@ -31,7 +31,7 @@ const Footer = () => {
     ]
 
     return (
-        <div className="h-[100px] w-full bg-primary z-10 p-3 flex flex-wrap content-center ">
+        <div className="h-[100px] w-full bg-primary p-3 flex flex-wrap content-center ">
             {/* <Header>
                 <span className="text-white">Contact Me</span>
             </Header> */}

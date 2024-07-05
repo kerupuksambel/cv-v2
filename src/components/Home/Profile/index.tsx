@@ -2,7 +2,7 @@
 
 const Profile = () => {
     return (
-        <div className="w-full bg-primary text-white h-[100vh] flex flex-wrap justify-center items-center relative z-10">
+        <div id="profile" className="w-full bg-primary text-white h-[100vh] flex flex-wrap justify-center items-center">
             <div className="flex items-center content-center justify-center flex-wrap w-1/2 space-y-10">
                 <div className="w-full">
                     <div className="text-5xl font-bold pt-3 font-header leading-snug">Ammar Alifian Fahdan</div>
