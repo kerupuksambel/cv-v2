@@ -7,6 +7,7 @@ import Layout from "@/components/Layout"
 import { useRef } from "react"
 import ProjectExperiences from "@/components/Home/ProjectExperiences"
 import Navbar from "@/components/Home/Navbar"
+import Contact from "@/components/Home/Contact"
 
 const Home: React.FC = () => {
     const mainRef = useRef<HTMLDivElement|null>(null)
@@ -43,8 +44,8 @@ const Home: React.FC = () => {
             id: "working-experiences",
         },
         {
-            name: "Educations",
-            id: "educations",
+            name: "Volunteerships",
+            id: "",
         },
         {
             name: "Projects",
@@ -64,6 +65,7 @@ const Home: React.FC = () => {
                     </div>
                 </div>
             </div>
+            <Contact/>
         </Layout>
     )
 } 
