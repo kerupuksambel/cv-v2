@@ -1,4 +1,5 @@
 import { ProjectT } from "@/components/Home/types";
+import { BASE_URL } from "@/lib/api";
 import { Icon } from "@iconify/react/dist/iconify.js";
 
 interface ProjectModalT {
@@ -10,11 +11,11 @@ const ProjectModal = ({project}: ProjectModalT) => {
         <div className="modal max-h-[60vh] md:max-h-[80vh] overflow-y-auto">
             <div className="flex flex-wrap md:flex-nowrap">
                 <div className="w-full md:w-2/3 justify-center flex">
-                    <img src={project.image_url}/>
+                    <img src={BASE_URL + "/../" + project.image_url}/>
                 </div>
                 <div className="w-full md:w-1/3 space-y-3 p-6">
                     <h2 className='text-3xl font-bold font-header'>{project.name}</h2>
-                    <p className="text-gray-500 italic">{project.summary}</p>
+                    {/* <p className="text-gray-500 italic">{project.summary}</p> */}
                     <p>{project.description}</p>
                     <div className="w-full space-y-3 pt-6 md:pt-0">
                         {/* <div className="font-bold text-center font-header">Tech Stacks</div> */}
@@ -33,7 +34,7 @@ const ProjectModal = ({project}: ProjectModalT) => {
                         </div>
                         <div className="w-full items-center justify-center text-center">
                         {
-                            project.tech_stacks
+                            project.tech_stacks.filter((p) => !(p.icon)).length > 0 && project.tech_stacks
                                 .filter((p) => !(p.icon))
                                 .map<React.ReactNode>((tech, idx) => (
                                     <a key={idx} className="hover:underline text-cyan-800" href={tech.link ?? "#"}>{tech.name}</a>

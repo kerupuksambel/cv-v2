@@ -1,6 +1,7 @@
 export type WorkExperienceT = {
     name: string;
     position: string;
+    location?: string;
     achievements: string[];
     date: {
         start: Date;

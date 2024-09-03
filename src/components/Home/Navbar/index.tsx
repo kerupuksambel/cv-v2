@@ -16,7 +16,7 @@ const Navbar = ({ menus }: NavbarT) => {
     const [openMenu, setOpenMenu] = useState(false)
     const [activeMenu, setActiveMenu] = useState<string|null>(null)
 
-    const [hidden, setHidden] = useState(false)
+    const [hidden, setHidden] = useState(true)
 
     const navbarHeight = 120
     const scrollToID = (id: string, behavior: ScrollBehavior = "smooth") => {

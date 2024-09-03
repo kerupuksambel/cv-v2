@@ -3,46 +3,48 @@
 import { Header } from "@/components/UI/Header";
 import { WorkExperienceT } from "../types";
 import dateFormat from "dateformat";
+import { fetchAPI } from "@/lib/api";
 
 // TODO: Dynamic to BE
-const workExperiences: WorkExperienceT[] = [
-    {
-        name: "Company Name",
-        position: "Full Stack Web Developer",
-        achievements: [
-            "Achievement 1",
-            "Achievement 2",
-            "Achievement 3",
-            "Achievement 4"
-        ],
-        date: {
-            start: new Date(),
-            end: null
-        },
-        tech_stacks:[]
-    },
-    {
-        name: "Another Company Name",
-        position: "Lead Developer",
-        achievements: [
-            "Achievement 1",
-            "Achievement 2",
-            "Achievement 3",
-            "Achievement 4"
-        ],
-        date: {
-            start: new Date(),
-            end: null
-        },
-        tech_stacks:[]
-    }
-]
+// const workExperiences: WorkExperienceT[] = [
+//     {
+//         name: "Company Name",
+//         position: "Full Stack Web Developer",
+//         achievements: [
+//             "Achievement 1",
+//             "Achievement 2",
+//             "Achievement 3",
+//             "Achievement 4"
+//         ],
+//         date: {
+//             start: new Date(),
+//             end: null
+//         },
+//         tech_stacks:[]
+//     },
+//     {
+//         name: "Another Company Name",
+//         position: "Lead Developer",
+//         achievements: [
+//             "Achievement 1",
+//             "Achievement 2",
+//             "Achievement 3",
+//             "Achievement 4"
+//         ],
+//         date: {
+//             start: new Date(),
+//             end: null
+//         },
+//         tech_stacks:[]
+//     }
+// ]
+
+const workExperiences = (await fetchAPI('works')).data as WorkExperienceT[]
 
 const WorkingExperiences = () => {
     return (
         <div className="flex flex-wrap justify-center" id="working-experiences">
             <Header>Work Experiences</Header>
-            {/* TODO: modularize */}
             <div className="w-full">
                 {
                     workExperiences.map((workExperience, idx) => (
